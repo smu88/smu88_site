@@ -1,0 +1,41 @@
+{% extends 'app_main/base.html' %}
+
+{% block title %} Реализованные объекты {% endblock %}
+
+{% block content %}
+    <div class="container text-center py-5">
+        <div class="row">
+            <div class="col-2">
+
+            </div>
+            <div class="col">
+                {% for project in projects %}
+                    <br>
+                    <h3>{{ project.name }}</h3>
+                    <br>
+                    <div id="{{ project.id }}" class="carousel slide" data-bs-ride="carousel">
+                      <div class="carousel-inner">
+                          {% for image in project.image.all %}
+                        <div class="carousel-item active" data-bs-interval="3000">
+                          <img src="/media/{{ image.image }}" class="d-block w-100" alt="{{ project.name }}" height="300px">
+                        </div>
+                        {% endfor %}
+                      </div>
+                      <button class="carousel-control-prev" type="button" data-bs-target="#{{ project.id }}" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                      </button>
+                      <button class="carousel-control-next" type="button" data-bs-target="#{{ project.id }}" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                      </button>
+                    </div>
+                    <hr>
+                {% endfor %}
+            </div>
+            <div class="col-2">
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

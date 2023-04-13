@@ -1,0 +1,31 @@
+{% extends 'app_main/base.html' %}
+{% load humanize %}
+
+
+{% block title %} Технологические инновации {% endblock %}
+
+{% block content %}
+    <div class="container text-center py-5">
+        <div class="row">
+            <div class="col-2">
+            </div>
+            <div class="col-8">
+               {% for innovation in innovations %}
+                <br>
+                    <div class="card mb-3">
+                        {% if innovation.image %}
+                      <img src="/media/{{ innovation.image }}" class="card-img-top" alt="{{ innovation.title }}">
+                        {% endif %}
+                      <div class="card-body">
+                        <h5 class="card-title">{{ innovation.title }}</h5>
+                        <p class="card-text"> {{ innovation.text | safe }}</p>
+                        <p class="card-text"><small class="text-body-secondary">{{ innovation.created_at | naturaltime}}</small></p>
+                      </div>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-2">
+            </div>
+        </div>
+    </div>
+{% endblock %}
