@@ -1,7 +1,7 @@
 asgiref==3.4.1
 backports.zoneinfo==0.2.1
 Django==3.2.16
-django-ckeditor==6.5.1
+django-ckeditor==6.3.2
 django-debug-toolbar==4.0.0
 django-environ==0.10.0
 django-js-asset==2.0.0
