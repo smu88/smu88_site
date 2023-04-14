@@ -29,7 +29,10 @@ SECRET_KEY = env('SECRET_KEY', default='django-insecure-w@trop!hx_fg!m0m!c8ao(n%
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = env('DEBUG', default=False)
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = [
+    'www.smu88.pythonanywhere.com',
+    'smu88.pythonanywhere.com',
+]
 
 # Application definition
 
