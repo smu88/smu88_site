@@ -1,0 +1,14 @@
+{% extends 'app_main/base.html' %}
+
+{% block title %} Главная страница | СМУ-88 {% endblock %}
+
+{% block content %}
+    <div class="container text-center py-5">
+        <div class="row">
+            <div class="col">
+                <h2>{{ about.title }}!</h2>
+                {{ about.text | safe }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
